@@ -61,7 +61,7 @@ fun SecondaryButton(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO, showBackground = true, backgroundColor = 0xFFFFFF)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
-fun PrimaryButtonPreview() {
+private fun PrimaryButtonPreview() {
     AppTheme {
         Column {
             PrimaryButton(

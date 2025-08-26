@@ -81,4 +81,3 @@ val LocalAppSize = staticCompositionLocalOf {
         small = Dp.Unspecified,
     )
 }
-
