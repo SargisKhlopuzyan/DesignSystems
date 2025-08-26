@@ -6,24 +6,33 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.sargis.khlopuzyan.designsystems.ui.theme.DesignSystemsTheme
+import com.sargis.khlopuzyan.designsystems.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            DesignSystemsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            AppTheme {
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    containerColor = AppTheme.colorScheme.background,
+                    contentColor = AppTheme.colorScheme.background
+                ) { innerPadding ->
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
+
+                    MaterialTheme.shapes
+                    MaterialTheme.typography
+                    MaterialTheme.colorScheme
                 }
             }
         }
@@ -41,7 +50,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    DesignSystemsTheme {
+    AppTheme {
         Greeting("Android")
     }
 }
