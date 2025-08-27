@@ -4,6 +4,7 @@ import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ripple.rememberRipple
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
@@ -82,13 +83,14 @@ fun AppTheme(
 ) {
     val colorScheme = if (isDarkMode) darkColorScheme else lightColorScheme
 //    val rippleIndication = rememberRipple()
+    val rippleIndication = ripple()
 
     CompositionLocalProvider(
         LocalAppColorScheme provides colorScheme,
         LocalAppTypography provides typography,
         LocalAppShape provides shape,
         LocalAppSize provides size,
-//        LocalIndication provides rippleIndication,
+        LocalIndication provides rippleIndication,
         content = content
     )
 }
